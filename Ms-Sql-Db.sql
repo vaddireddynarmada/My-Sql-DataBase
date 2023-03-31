@@ -31,4 +31,10 @@ update employee_payroll set gender='M' where name='terisa' or name='charlie';
 select *from employee_payroll;
 update employee_payroll set salary='30000000.0' where name='terisa';
 select *from employee_payroll;
+#UC7
+select avg(salary) from employee_payroll where gender='M' group by gender;
+select avg(salary) from employee_payroll group by gender;
+select gender,avg(salary) from employee_payroll group by gender;
+select gender,count(salary) from employee_payroll group by gender;
+select gender,sum(salary) from employee_payroll group by gender;
 
