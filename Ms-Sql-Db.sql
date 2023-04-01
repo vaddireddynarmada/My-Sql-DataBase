@@ -42,4 +42,11 @@ alter table employee_payroll add phonenumber varchar(250) after name;
 alter table employee_payroll add address varchar(250) after name;
 alter table employee_payroll add department varchar(250) not null after name;
 alter table employee_payroll alter address set default 'TBD';
-insert into employee_payroll(name,salary,start)values('Bill',1000000.00,'2018-01-03')
+insert into employee_payroll(name,salary,start)values('Bill',1000000.00,'2018-01-03');
+#UC9
+alter table employee_payroll rename column salary to basic_pay;
+alter table employee_payroll add deductions double not null after basic_pay;
+alter table employee_payroll add taxable_pay double not null after deductions;
+alter table employee_payroll add tax double not null after taxable_pay;
+alter table employee_payroll add net_pay double not null after tax;
+select*from employee_payroll;
