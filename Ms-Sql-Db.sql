@@ -37,4 +37,9 @@ select avg(salary) from employee_payroll group by gender;
 select gender,avg(salary) from employee_payroll group by gender;
 select gender,count(salary) from employee_payroll group by gender;
 select gender,sum(salary) from employee_payroll group by gender;
-
+#UC8
+alter table employee_payroll add phonenumber varchar(250) after name;
+alter table employee_payroll add address varchar(250) after name;
+alter table employee_payroll add department varchar(250) not null after name;
+alter table employee_payroll alter address set default 'TBD';
+insert into employee_payroll(name,salary,start)values('Bill',1000000.00,'2018-01-03')
